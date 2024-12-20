@@ -1,5 +1,0 @@
-{
-  "ConnectionStrings": {
-    "InventoryDb": "Data Source=DESKTOP-GSJ1HJB\\SQLEXPRESS;Initial Catalog=Inventory;Integrated Security=True TrustServerCertificate=True;"
-  }
-}
