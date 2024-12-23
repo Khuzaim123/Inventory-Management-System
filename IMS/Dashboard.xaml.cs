@@ -88,5 +88,11 @@ namespace InventoryApp
             Barcode b = new Barcode();
             b.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Order o = new Order();
+            o.Show();
+        }
     }
 }

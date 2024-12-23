@@ -1,0 +1,64 @@
+﻿<Window x:Class="Inventory_managment.Order"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Order Management" Height="600" Width="800">
+    <Grid>
+        <TextBlock Text="Order Management" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+
+        <TabControl Margin="10">
+            <!-- Sales Orders Tab -->
+            <TabItem Header="Sales Orders">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Customer Name:"/>
+                    <TextBox x:Name="txtCustomerName" Width="200"/>
+
+                    <TextBlock Text="Total Amount:" Margin="0,10,0,0"/>
+                    <TextBox x:Name="txtTotalAmount" Width="200"/>
+
+                    <TextBlock Text="Status:" Margin="0,10,0,0"/>
+                    <ComboBox x:Name="cmbSalesStatus" Width="200">
+                        <ComboBoxItem Content="Pending"/>
+                        <ComboBoxItem Content="Shipped"/>
+                        <ComboBoxItem Content="Cancelled"/>
+                    </ComboBox>
+
+                    <Button Content="Add Sales Order" Width="200" Margin="0,20,0,0" Click="btnAddSalesOrder_Click"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Purchase Orders Tab -->
+            <TabItem Header="Purchase Orders">
+                <StackPanel Margin="10">
+                    <!-- Use Supplier ID for Purchase Orders -->
+                    <TextBlock Text="Supplier ID:"/>
+                    <TextBox x:Name="txtSupplierID" Width="200"/>
+
+                    <TextBlock Text="Total Amount:" Margin="0,10,0,0"/>
+                    <TextBox x:Name="txtPurchaseTotalAmount" Width="200"/>
+
+                    <TextBlock Text="Status:" Margin="0,10,0,0"/>
+                    <ComboBox x:Name="cmbPurchaseStatus" Width="200">
+                        <ComboBoxItem Content="Pending"/>
+                        <ComboBoxItem Content="Completed"/>
+                        <ComboBoxItem Content="Cancelled"/>
+                    </ComboBox>
+
+                    <Button Content="Add Purchase Order" Width="200" Margin="0,20,0,0" Click="btnAddPurchaseOrder_Click"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Supplier Management Tab -->
+            <TabItem Header="Supplier Management">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Supplier Name:"/>
+                    <TextBox x:Name="txtNewSupplierName" Width="200"/>
+
+                    <TextBlock Text="Contact Name:" Margin="0,10,0,0"/>
+                    <TextBox x:Name="txtContactName" Width="200"/>
+
+                    <Button Content="Add Supplier" Width="200" Margin="0,20,0,0" Click="btnAddSupplier_Click"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

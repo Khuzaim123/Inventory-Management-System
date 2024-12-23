@@ -569,3 +569,5 @@ C:\Users\Khuzaim\OneDrive\Desktop\mht\IMS\obj\Debug\net8.0-windows\Product.g.cs
 C:\Users\Khuzaim\OneDrive\Desktop\mht\IMS\obj\Debug\net8.0-windows\Product.baml
 C:\Users\Khuzaim\OneDrive\Desktop\mht\IMS\obj\Debug\net8.0-windows\Barcode.baml
 C:\Users\Khuzaim\OneDrive\Desktop\mht\IMS\obj\Debug\net8.0-windows\Barcode.g.cs
+C:\Users\Khuzaim\OneDrive\Desktop\mht\IMS\obj\Debug\net8.0-windows\Order.baml
+C:\Users\Khuzaim\OneDrive\Desktop\mht\IMS\obj\Debug\net8.0-windows\Order.g.cs
