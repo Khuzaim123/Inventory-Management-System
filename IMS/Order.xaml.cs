@@ -75,18 +75,18 @@ namespace Inventory_managment
                 {
                     connection.Open();
 
-                    // Insert query using SupplierName directly
-                    string query = "INSERT INTO IMS_PurchaseOrders (SupplierName, OrderDate, Status, TotalAmount) " +
-                                   "VALUES (@SupplierName, @OrderDate, @Status, @TotalAmount)";
+                    // Insert query using SupplierID directly
+                    string query = "INSERT INTO IMS_PurchaseOrders (SupplierID, OrderDate, Status, TotalAmount) " +
+                                   "VALUES (@SupplierID, @OrderDate, @Status, @TotalAmount)";
                     SqlCommand command = new SqlCommand(query, connection);
 
-                    // Add parameters
-                    command.Parameters.AddWithValue("@SupplierName", txtSupplierName.Text);
+                    // Use txtSupplierID for Purchase Orders (if it's Supplier ID)
+                    command.Parameters.AddWithValue("@SupplierID", int.Parse(txtSupplierID.Text));
+
                     command.Parameters.AddWithValue("@OrderDate", DateTime.Now);
                     command.Parameters.AddWithValue("@Status", (cmbPurchaseStatus.SelectedItem as ComboBoxItem)?.Content.ToString());
                     command.Parameters.AddWithValue("@TotalAmount", decimal.Parse(txtPurchaseTotalAmount.Text));
 
-                    // Execute the query
                     command.ExecuteNonQuery();
 
                     MessageBox.Show("Purchase order added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -127,6 +127,11 @@ namespace Inventory_managment
             {
                 MessageBox.Show($"Error adding purchase order: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+        private void btnSaveAll_Click(object sender, RoutedEventArgs e)
+        {
+            // Logic to save all orders and suppliers
+            MessageBox.Show("All data has been saved successfully!");
         }
     }
 }

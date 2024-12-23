@@ -94,5 +94,11 @@ namespace InventoryApp
             Order o = new Order();
             o.Show();
         }
+
+        private void btnInventoryTracking_Click(object sender, RoutedEventArgs e)
+        {
+            Inventory_Tracking i = new Inventory_Tracking();
+            i.Show();
+        }
     }
 }

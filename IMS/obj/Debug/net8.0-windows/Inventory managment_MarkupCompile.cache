@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\Khuzaim\OneDrive\Desktop\mht\IMS\App.xaml
-8-1508070123
+9-1038719410
 
-11-1186535691
+12-340525414
 229570570062
-Barcode.xaml;Dashboard.xaml;LoginForm.xaml;LoginForm.xaml.xaml;MainWindow.xaml;Order.xaml;Product.xaml;Signupform.xaml;
+Barcode.xaml;Dashboard.xaml;Inventory_Tracking.xaml;LoginForm.xaml;LoginForm.xaml.xaml;MainWindow.xaml;Order.xaml;Product.xaml;Signupform.xaml;
 
-True
+False
 

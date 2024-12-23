@@ -34,6 +34,8 @@
                 <Button Content="Reports" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" />
                 <!-- Scan Barcode Button -->
                 <Button x:Name="ScanBarcode" Content="Scan Barcode" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="ScanBarcode_Click" />
+                <!-- Inventory Tracking Button -->
+                <Button x:Name="btnInventoryTracking" Content="Inventory Tracking" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="btnInventoryTracking_Click" />
             </StackPanel>
         </Border>
 
