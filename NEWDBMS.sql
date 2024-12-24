@@ -209,3 +209,15 @@ CREATE TABLE IMS_StockMovementHistory (
     FOREIGN KEY (SourceLocationID) REFERENCES IMS_Locations(LocationID),
     FOREIGN KEY (DestinationLocationID) REFERENCES IMS_Locations(LocationID)
 );
+
+CREATE TABLE IMS_SystemMessages (
+    MessageID INT PRIMARY KEY IDENTITY(1,1),
+    Message NVARCHAR(255) NOT NULL,   -- Message text
+    IsActive BIT DEFAULT 1,            -- To track if the message is active
+    CreatedAt DATETIME DEFAULT GETDATE()  -- Timestamp of when the message was created
+);
+INSERT INTO IMS_SystemMessages (Message, IsActive)
+VALUES 
+('System maintenance scheduled for 12 AM tonight.', 1),
+('Please review the pending purchase orders.', 1),
+('Stock levels are critical for some products. Please check!', 1);

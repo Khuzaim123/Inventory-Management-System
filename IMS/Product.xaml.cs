@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Data;
 using System.Collections.Generic;
+using InventoryApp;
 
 namespace Inventory_managment
 {
@@ -16,6 +17,20 @@ namespace Inventory_managment
             InitializeComponent();
             LoadCategories();
             LoadProducts();  // Load all products initially
+        }
+
+        private Dashboard GetDashboardWindow()
+        {
+            // Iterate through all open windows
+            foreach (Window window in Application.Current.Windows)
+            {
+                // Check if the window is of type Dashboard
+                if (window is Dashboard dashboard)
+                {
+                    return dashboard; // Return the found Dashboard window
+                }
+            }
+            return null; // If no Dashboard window is open
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -38,6 +53,13 @@ namespace Inventory_managment
                     MessageBox.Show("Product added successfully.");
                     ClearFields();
                     LoadProducts();  // Reload products after adding
+
+                    // Update the dashboard immediately after adding a product
+                    Dashboard dashboard = GetDashboardWindow();
+                    if (dashboard != null)
+                    {
+                        dashboard.UpdateDashboardData(); // Update the dashboard if found
+                    }
                 }
             }
             catch (Exception ex)
@@ -75,6 +97,13 @@ namespace Inventory_managment
                     MessageBox.Show("Product updated successfully.");
                     ClearFields();
                     LoadProducts();  // Reload products after update
+
+                    // Update the dashboard immediately after updating a product
+                    Dashboard dashboard = GetDashboardWindow();
+                    if (dashboard != null)
+                    {
+                        dashboard.UpdateDashboardData(); // Update the dashboard if found
+                    }
                 }
             }
             catch (Exception ex)
@@ -107,6 +136,13 @@ namespace Inventory_managment
                     MessageBox.Show("Product deleted successfully.");
                     ClearFields();
                     LoadProducts();  // Reload products after delete
+
+                    // Find the Dashboard window and update it
+                    Dashboard dashboard = GetDashboardWindow();
+                    if (dashboard != null)
+                    {
+                        dashboard.UpdateDashboardData(); // Update the dashboard if found
+                    }
                 }
             }
             catch (Exception ex)
@@ -130,7 +166,6 @@ namespace Inventory_managment
             dgProducts.SelectedItem = null;
         }
 
-        // Load Products based on selected category
         private void LoadProducts(string category = null)
         {
             try
@@ -168,7 +203,6 @@ namespace Inventory_managment
             }
         }
 
-        // Load Categories to populate comboboxes
         private void LoadCategories()
         {
             try
@@ -209,16 +243,18 @@ namespace Inventory_managment
             }
         }
 
-        // Filter products based on selected category
         private void cmbFilterCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cmbFilterCategory.SelectedItem != null)
-            {
-                string selectedCategory = cmbFilterCategory.SelectedItem.ToString().Trim();
+            // This method can be used to handle selection changes if needed
+        }
 
-                // Load products based on the selected category (including "All" to show all products)
-                LoadProducts(selectedCategory == "All" ? null : selectedCategory);
-            }
+        private void btnFilter_Click(object sender, RoutedEventArgs e)
+        {
+            // Get the selected category from the ComboBox
+            string selectedCategory = cmbFilterCategory.SelectedItem?.ToString().Trim();
+
+            // Load products based on the selected category (including null to show all products)
+            LoadProducts(selectedCategory == "All" ? null : selectedCategory);
         }
     }
 }

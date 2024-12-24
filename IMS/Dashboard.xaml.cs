@@ -43,9 +43,8 @@ namespace InventoryApp
         }
 
         public ObservableCollection<string> LowStockAlerts { get; set; } = new ObservableCollection<string>();
-        public ObservableCollection<string> Notifications { get; set; } = new ObservableCollection<string>(); // Notifications list
 
-        private string connectionString = "Data Source=Khuzaim-PC;Initial Catalog=project;Integrated Security=True;Trust Server Certificate=True;";
+        private string connectionString = "Data Source=KHUZAIM-PC;Initial Catalog=master;Integrated Security=True;Trust Server Certificate=True;";
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -58,7 +57,6 @@ namespace InventoryApp
         {
             InitializeComponent();
             LoadDashboardData();
-            CheckOrderStatusChanges(); // Check for order status changes on load
             this.DataContext = this;
         }
 
@@ -70,36 +68,146 @@ namespace InventoryApp
                 {
                     connection.Open();
 
-                    // Query to get total stock
+                    // Fetch Total Stock
                     string stockQuery = "SELECT SUM(Quantity) FROM IMS_Products";
                     SqlCommand stockCommand = new SqlCommand(stockQuery, connection);
                     TotalStock = Convert.ToInt32(stockCommand.ExecuteScalar());
 
-                    // Check for low stock alerts
-                    if (TotalStock < 30) // Adjust the threshold as needed
+                    // Show notification if stock exceeds 1650 or drops below 1600
+                    if (TotalStock > 1650)
                     {
-                        Notifications.Add($"Warning: Total stock is low ({TotalStock}). Please restock.");
+                        MessageBox.Show("Warning: Total stock exceeds 1650 units.",
+                                        "Stock Alert",
+                                        MessageBoxButton.OK,
+                                        MessageBoxImage.Warning);
+                    }
+                    else if (TotalStock < 1600)
+                    {
+                        MessageBox.Show("Warning: Total stock is below 1600 units.",
+                                        "Stock Alert",
+                                        MessageBoxButton.OK,
+                                        MessageBoxImage.Warning);
                     }
 
-                    // Query to get total sales
+                    // Fetch Total Sales
                     string salesQuery = "SELECT SUM(TotalAmount) FROM IMS_SalesOrders";
                     SqlCommand salesCommand = new SqlCommand(salesQuery, connection);
                     TotalSales = Convert.ToInt32(salesCommand.ExecuteScalar());
 
-                    // Query to get total purchases
+                    // Show notification if Total Sales exceed 54000
+                    if (TotalSales > 54000)
+                    {
+                        MessageBox.Show("Alert: Total Sales have exceeded 54,000 units.",
+                                        "Sales Alert",
+                                        MessageBoxButton.OK,
+                                        MessageBoxImage.Information);
+                    }
+
+                    // Fetch Total Purchases
                     string purchasesQuery = "SELECT SUM(TotalAmount) FROM IMS_PurchaseOrders";
                     SqlCommand purchasesCommand = new SqlCommand(purchasesQuery, connection);
                     TotalPurchases = Convert.ToInt32(purchasesCommand.ExecuteScalar());
 
-                    // Query to get low stock alerts
-                    string lowStockQuery = "SELECT Name FROM IMS_Products WHERE Quantity < 10"; // Adjust the threshold as needed
+                    // Show notification if Total Purchases exceed 690000
+                    if (TotalPurchases > 690000)
+                    {
+                        MessageBox.Show("Alert: Total Purchases have exceeded 690,000 units.",
+                                        "Purchases Alert",
+                                        MessageBoxButton.OK,
+                                        MessageBoxImage.Information);
+                    }
+
+                    // Low Stock Query
+                    string lowStockQuery = "SELECT Name, Quantity FROM IMS_Products WHERE Quantity < 10";
                     SqlCommand lowStockCommand = new SqlCommand(lowStockQuery, connection);
                     SqlDataReader reader = lowStockCommand.ExecuteReader();
-                    LowStockAlerts.Clear();
+                    LowStockAlerts.Clear(); // Clear previous alerts
 
-                    while (reader.Read())
+                    bool hasLowStock = false; // Flag to track if there are any low stock items
+
+                    if (reader.HasRows) // Ensure there is data before reading
                     {
-                        LowStockAlerts.Add(reader.GetString(0));
+                        while (reader.Read())
+                        {
+                            string productName = reader.GetString(0);
+                            int quantity = reader.GetInt32(1);
+
+                            LowStockAlerts.Add($"{productName}: Only {quantity} left in stock!");
+
+                            // If a product is running low, show a system notification
+                            hasLowStock = true;
+                        }
+                    }
+
+                    // Close the reader before executing the next query
+                    reader.Close();
+
+                    // Show a notification message if any product has low stock
+                    if (hasLowStock)
+                    {
+                        MessageBox.Show("Warning: Some products have low stock (less than 10). Please check the low stock alerts.",
+                                        "Low Stock Alert",
+                                        MessageBoxButton.OK,
+                                        MessageBoxImage.Warning);
+                    }
+
+                    // Check for order status changes (e.g., Pending orders)
+                    string orderStatusQuery = "SELECT SalesOrderID, Status FROM IMS_SalesOrders WHERE Status = 'Pending'";
+                    SqlCommand orderStatusCommand = new SqlCommand(orderStatusQuery, connection);
+                    SqlDataReader orderStatusReader = orderStatusCommand.ExecuteReader();
+                    bool hasPendingOrders = false;
+
+                    if (orderStatusReader.HasRows) // If there are pending orders
+                    {
+                        while (orderStatusReader.Read())
+                        {
+                            string orderId = orderStatusReader.GetInt32(0).ToString(); // SalesOrderID
+                            string status = orderStatusReader.GetString(1);
+
+                            // Adding the pending order to the system message
+                            LowStockAlerts.Add($"Order ID: {orderId} is currently {status}. Please review.");
+                            hasPendingOrders = true;
+                        }
+                    }
+
+                    // Close the order status reader
+                    orderStatusReader.Close();
+
+                    // Show a notification if there are pending orders
+                    if (hasPendingOrders)
+                    {
+                        MessageBox.Show("Alert: There are pending orders in the system that require attention.",
+                                        "Order Status Alert",
+                                        MessageBoxButton.OK,
+                                        MessageBoxImage.Information);
+                    }
+
+                    // You can also implement system messages here
+                    string systemMessagesQuery = "SELECT Message FROM IMS_SystemMessages WHERE IsActive = 1"; // Example: system messages
+                    SqlCommand systemMessagesCommand = new SqlCommand(systemMessagesQuery, connection);
+                    SqlDataReader systemMessagesReader = systemMessagesCommand.ExecuteReader();
+                    bool hasSystemMessages = false;
+
+                    if (systemMessagesReader.HasRows) // If there are active system messages
+                    {
+                        while (systemMessagesReader.Read())
+                        {
+                            string systemMessage = systemMessagesReader.GetString(0);
+                            LowStockAlerts.Add($"System Message: {systemMessage}");
+                            hasSystemMessages = true;
+                        }
+                    }
+
+                    // Close the system messages reader
+                    systemMessagesReader.Close();
+
+                    // Show system messages if available
+                    if (hasSystemMessages)
+                    {
+                        MessageBox.Show("System Messages: Please check for important updates or actions required.",
+                                        "System Messages",
+                                        MessageBoxButton.OK,
+                                        MessageBoxImage.Information);
                     }
                 }
             }
@@ -109,31 +217,10 @@ namespace InventoryApp
             }
         }
 
-        private void CheckOrderStatusChanges()
+        // Add this method to update dashboard data explicitly
+        public void UpdateDashboardData()
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                // Update the query to use the correct table name
-                string query = "SELECT SalesOrderID, Status FROM IMS_SalesOrders WHERE OrderDate >= @LastCheckedDate";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@LastCheckedDate", DateTime.Now.AddMinutes(-5)); // Check for changes in the last 5 minutes
-
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    int orderId = reader.GetInt32(0);
-                    string status = reader.GetString(1);
-
-                    // Notify if the order status has changed
-                    NotifyOrderStatusChange(orderId, status);
-                }
-            }
-        }
-
-        private void NotifyOrderStatusChange(int orderId, string status)
-        {
-            Notifications.Add($"Order #{orderId} status has changed to {status}.");
+            LoadDashboardData(); // Reload the dashboard data
         }
 
         private void btnInventoryTracking_Click(object sender, RoutedEventArgs e)
@@ -149,22 +236,28 @@ namespace InventoryApp
             p.Show();
         }
 
+        private void ScanBarcode_Click(object sender, RoutedEventArgs e)
+        {
+            Barcode b = new Barcode();
+            b.Show();
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Order o = new Order();
             o.Show();
         }
 
-        private void ScanBarcode_Click(object sender, RoutedEventArgs e)
-        {
-            Barcode scanner = new Barcode();
-            scanner.Show();
-        }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Supplier s = new Supplier();
-            s.Show();
+            Supplier supplier = new Supplier();
+            supplier.Show();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Report r = new Report();
+            r.Show();
         }
     }
 }

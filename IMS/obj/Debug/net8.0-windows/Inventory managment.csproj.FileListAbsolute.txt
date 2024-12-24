@@ -665,3 +665,5 @@ D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Deb
 D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\ref\Inventory managment.dll
 D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Supplier.g.cs
 D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Supplier.baml
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Reports.baml
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Reports.g.cs

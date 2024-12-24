@@ -92,6 +92,7 @@
                     <TextBox.ToolTip>Enter Unit Price</TextBox.ToolTip>
                 </TextBox>
 
+
                 <Label Style="{StaticResource LabelStyle}" Content="Quantity:" Margin="0,0,0,15"/>
                 <TextBox x:Name="txtQuantity" Style="{StaticResource TextBoxStyle}" Margin="0,0,0,15">
                     <TextBox.ToolTip>Enter Quantity</TextBox.ToolTip>
@@ -113,9 +114,12 @@
             <!-- Product List Display -->
             <StackPanel Grid.Column="1" Margin="10,0,0,0">
                 <Label Style="{StaticResource LabelStyle}" Content="Filter by Category:" Margin="0,0,0,15"/>
-                <ComboBox x:Name="cmbFilterCategory" Style="{StaticResource ComboBoxStyle}" Margin="0,0,0,15">
+                <ComboBox x:Name="cmbFilterCategory" Style="{StaticResource ComboBoxStyle}" Margin="0,0,0,15" SelectionChanged="cmbFilterCategory_SelectionChanged">
                     <ComboBox.ToolTip>Filter by Category</ComboBox.ToolTip>
                 </ComboBox>
+
+                <!-- Add the Filter Button -->
+                <Button x:Name="btnFilter" Content="Filter" Style="{StaticResource ButtonStyle}" Background="#2196F3" Foreground="White" Click="btnFilter_Click"/>
 
                 <DataGrid x:Name="dgProducts" AutoGenerateColumns="False" Margin="5" Height="400" Background="#FFFFFF" BorderBrush="#008080" FontSize="14" AlternatingRowBackground="#F1F1F1">
                     <DataGrid.Columns>
