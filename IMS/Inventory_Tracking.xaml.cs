@@ -7,7 +7,7 @@ namespace Inventory_managment
 {
     public partial class Inventory_Tracking : Window
     {
-        private string connectionString = "Data Source=Khuzaim-PC;Initial Catalog=project;Integrated Security=True;Trust Server Certificate=True;";
+        private string connectionString = "Data Source=Khuzaim-PC;Initial Catalog=master;Integrated Security=True;Trust Server Certificate=True;";
 
         public Inventory_Tracking()
         {
@@ -22,12 +22,12 @@ namespace Inventory_managment
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT LocationName FROM dbo.IMS_Locations";
+                string query = "SELECT LocationName FROM IMS_Locations";
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    lstLocations.Items.Add(reader.GetString(0));
+                    Console.WriteLine(reader.GetString(0));
                 }
             }
         }
@@ -37,7 +37,7 @@ namespace Inventory_managment
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT BatchNumber FROM IMS_ProductBatches";
+                string query = "SELECT BatchNumber FROM dbo.IMS_ProductBatches"; // Ensure the schema is correct
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -52,7 +52,7 @@ namespace Inventory_managment
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT MovementType, Quantity, MovementDate FROM IMS_StockMovementHistory";
+                string query = "SELECT MovementType, Quantity, MovementDate FROM dbo.IMS_StockMovementHistory"; // Ensure the schema is correct
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -71,7 +71,7 @@ namespace Inventory_managment
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "INSERT INTO IMS_Locations (LocationName, Address, Phone) VALUES (@LocationName, @Address, @Phone)";
+                string query = "INSERT INTO dbo.IMS_Locations (LocationName, Address, Phone) VALUES (@LocationName, @Address, @Phone)"; // Ensure the schema is correct
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@LocationName", locationName);
                 command.Parameters.AddWithValue("@Address", address);
@@ -82,7 +82,7 @@ namespace Inventory_managment
             lstLocations.Items.Add(locationName);
             txtLocationName.Clear();
             txtLocationAddress.Clear();
-            txtLocationPhone.Clear();
+            txtLocationPhone .Clear();
         }
 
         private void btnAddBatch_Click(object sender, RoutedEventArgs e)
@@ -96,7 +96,7 @@ namespace Inventory_managment
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "INSERT INTO IMS_ProductBatches (ProductID, BatchNumber, ExpiryDate, Quantity, LocationID) VALUES (@ProductID, @BatchNumber, @ExpiryDate, @Quantity, @LocationID)";
+                string query = "INSERT INTO dbo.IMS_ProductBatches (ProductID, BatchNumber, ExpiryDate, Quantity, LocationID) VALUES (@ProductID, @BatchNumber, @ExpiryDate, @Quantity, @LocationID)"; // Ensure the schema is correct
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ProductID", productId);
                 command.Parameters.AddWithValue("@BatchNumber", batchNumber);
@@ -124,7 +124,7 @@ namespace Inventory_managment
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "INSERT INTO IMS_StockMovementHistory (ProductID, MovementType, Quantity, SourceLocationID, DestinationLocationID) VALUES (@ProductID, @MovementType, @Quantity, @SourceLocationID, @DestinationLocationID)";
+                string query = "INSERT INTO dbo.IMS_StockMovementHistory (ProductID, MovementType, Quantity, SourceLocationID, DestinationLocationID) VALUES (@ProductID, @MovementType, @Quantity, @SourceLocationID, @DestinationLocationID)"; // Ensure the schema is correct
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ProductID", productId);
                 command.Parameters.AddWithValue("@MovementType", movementType);

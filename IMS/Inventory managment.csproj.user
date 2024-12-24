@@ -31,6 +31,9 @@
     <Compile Update="Signupform.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Supplier.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Barcode.xaml">
@@ -58,6 +61,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Signupform.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Supplier.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
