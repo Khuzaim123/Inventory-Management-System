@@ -29,12 +29,10 @@
                 <TextBlock Text="Navigate" Foreground="White" FontSize="22" FontWeight="Bold" Margin="10" TextAlignment="Center" />
                 <Button Content="Dashboard" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" />
                 <Button Content="Products" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="Button_Click" />
-                <Button Content="Suppliers" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" />
+                <Button Content="Suppliers" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="Button_Click_2" />
                 <Button Content="Orders" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="Button_Click_1" />
                 <Button Content="Reports" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" />
-                <!-- Scan Barcode Button -->
                 <Button x:Name="ScanBarcode" Content="Scan Barcode" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="ScanBarcode_Click" />
-                <!-- Inventory Tracking Button -->
                 <Button x:Name="btnInventoryTracking" Content="Inventory Tracking" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="btnInventoryTracking_Click" />
             </StackPanel>
         </Border>
@@ -83,6 +81,10 @@
                     </StackPanel>
                 </Border>
             </StackPanel>
+
+            <!-- Notifications Section -->
+            <TextBlock Text="Notifications" FontSize="22" FontWeight="Bold" Foreground="#333" Margin="10" />
+            <ListBox ItemsSource="{Binding Notifications}" Height="150" Background="White" Foreground="#333" Margin="10" />
         </StackPanel>
     </Grid>
 </Window>

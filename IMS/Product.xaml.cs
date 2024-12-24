@@ -3,18 +3,19 @@ using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Controls;
 using System.Data;
+using System.Collections.Generic;
 
 namespace Inventory_managment
 {
     public partial class Product : Window
     {
-        private string connectionString = "Data Source=Khuzaim-PC;Initial Catalog=project;Integrated Security=True;";
+        private string connectionString = "Data Source=KHUZAIM-PC;Initial Catalog=master;Integrated Security=True;TrustServerCertificate=True;";
 
         public Product()
         {
             InitializeComponent();
             LoadCategories();
-            LoadProducts();
+            LoadProducts();  // Load all products initially
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -36,7 +37,7 @@ namespace Inventory_managment
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Product added successfully.");
                     ClearFields();
-                    LoadProducts();
+                    LoadProducts();  // Reload products after adding
                 }
             }
             catch (Exception ex)
@@ -73,7 +74,7 @@ namespace Inventory_managment
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Product updated successfully.");
                     ClearFields();
-                    LoadProducts();
+                    LoadProducts();  // Reload products after update
                 }
             }
             catch (Exception ex)
@@ -105,7 +106,7 @@ namespace Inventory_managment
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Product deleted successfully.");
                     ClearFields();
-                    LoadProducts();
+                    LoadProducts();  // Reload products after delete
                 }
             }
             catch (Exception ex)
@@ -129,6 +130,7 @@ namespace Inventory_managment
             dgProducts.SelectedItem = null;
         }
 
+        // Load Products based on selected category
         private void LoadProducts(string category = null)
         {
             try
@@ -138,22 +140,25 @@ namespace Inventory_managment
                     con.Open();
                     string query = "SELECT ProductID, Name, SKU, Category, UnitPrice, Quantity FROM IMS_Products";
 
-                    if (!string.IsNullOrEmpty(category))
+                    // Apply category filter if it's not null or "All"
+                    if (!string.IsNullOrEmpty(category) && category != "All")
                     {
                         query += " WHERE Category = @Category";
                     }
 
                     SqlCommand cmd = new SqlCommand(query, con);
 
-                    if (!string.IsNullOrEmpty(category))
+                    // Add parameter for category if necessary
+                    if (!string.IsNullOrEmpty(category) && category != "All")
                     {
-                        cmd.Parameters.AddWithValue("@Category", category);
+                        cmd.Parameters.AddWithValue("@Category", category.Trim());
                     }
 
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
+                    // Bind data to the DataGrid
                     dgProducts.ItemsSource = dt.DefaultView;
                 }
             }
@@ -162,6 +167,8 @@ namespace Inventory_managment
                 MessageBox.Show($"Error loading products: {ex.Message}");
             }
         }
+
+        // Load Categories to populate comboboxes
         private void LoadCategories()
         {
             try
@@ -172,19 +179,28 @@ namespace Inventory_managment
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string query = "SELECT DISTINCT Category FROM IMS_Products";
+                    string query = "SELECT DISTINCT Category FROM IMS_Products ORDER BY Category";  // Sorted query
                     SqlCommand cmd = new SqlCommand(query, con);
                     SqlDataReader reader = cmd.ExecuteReader();
 
+                    List<string> categories = new List<string>();
                     while (reader.Read())
                     {
-                        string category = reader["Category"].ToString();
+                        string category = reader["Category"].ToString().Trim(); // Trim spaces
+                        categories.Add(category);
+                    }
+
+                    categories.Sort();  // Sorting categories manually (optional if the query already sorts them)
+
+                    foreach (string category in categories)
+                    {
                         cmbCategory.Items.Add(category);
                         cmbFilterCategory.Items.Add(category);
                     }
 
+                    // Add "All" as the first item for the filter dropdown
                     cmbFilterCategory.Items.Insert(0, "All");
-                    cmbFilterCategory.SelectedIndex = 0;
+                    cmbFilterCategory.SelectedIndex = 0; // Default to "All"
                 }
             }
             catch (Exception ex)
@@ -193,15 +209,16 @@ namespace Inventory_managment
             }
         }
 
-
+        // Filter products based on selected category
         private void cmbFilterCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cmbFilterCategory.SelectedItem != null)
             {
-                string selectedCategory = cmbFilterCategory.SelectedItem.ToString();
+                string selectedCategory = cmbFilterCategory.SelectedItem.ToString().Trim();
+
+                // Load products based on the selected category (including "All" to show all products)
                 LoadProducts(selectedCategory == "All" ? null : selectedCategory);
             }
         }
-
     }
 }

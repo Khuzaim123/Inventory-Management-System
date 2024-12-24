@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Inventory_managment"
         mc:Ignorable="d"
-        Title="Supplier" Height="450" Width="800">
+        Title="Supplier Management" Height="595" Width="800">
     <Grid>
-        
+        <StackPanel Margin="10">
+            <TextBlock Text="Supplier Management" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Supplier Name:"/>
+            <TextBox x:Name="txtSupplierName" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Contact Name:"/>
+            <TextBox x:Name="txtContactName" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Phone:"/>
+            <TextBox x:Name="txtPhone" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Email:"/>
+            <TextBox x:Name="txtEmail" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Address:"/>
+            <TextBox x:Name="txtAddress" Margin="0,0,0,10"/>
+
+            <Button Content="Save Supplier" Click="btnSaveSupplier_Click" Margin="0,10,0,0"/>
+
+            <TextBlock Text="Purchase History" FontSize="20" FontWeight="Bold" Margin="0,20,0,10"/>
+            <DataGrid x:Name="dataGridPurchaseHistory" AutoGenerateColumns="False" Height="200">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Order ID" Binding="{Binding PurchaseOrderID}"/>
+                    <DataGridTextColumn Header="Order Date" Binding="{Binding OrderDate}"/>
+                    <DataGridTextColumn Header="Total Amount" Binding="{Binding TotalAmount}"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </Window>
