@@ -169,3 +169,43 @@ VALUES
 ('staff1', 'hashedpassword789', 'Staff');
 
 
+-- Create IMS_Locations Table
+CREATE TABLE IMS_Locations (
+    LocationID INT PRIMARY KEY IDENTITY(1,1),
+    LocationName NVARCHAR(100) NOT NULL UNIQUE,  -- Name of the warehouse/store
+    Address NVARCHAR(255) NULL,                 -- Address of the location
+    Phone NVARCHAR(15) NULL,                    -- Contact phone number
+    CreatedAt DATETIME DEFAULT GETDATE()        -- Timestamp
+);
+
+-- Create IMS_ProductBatches Table
+CREATE TABLE IMS_ProductBatches (
+    BatchID INT PRIMARY KEY IDENTITY(1,1),
+    ProductID INT NOT NULL,                    -- Foreign key to IMS_Products
+    BatchNumber NVARCHAR(50) NOT NULL UNIQUE,  -- Unique batch or lot number
+    ExpiryDate DATETIME NULL,                  -- Expiry date for perishable products
+    Quantity INT NOT NULL,                     -- Quantity in this batch
+    LocationID INT NOT NULL,                   -- Foreign key to IMS_Locations
+    CreatedAt DATETIME DEFAULT GETDATE(),      -- Timestamp
+
+    FOREIGN KEY (ProductID) REFERENCES IMS_Products(ProductID),
+    FOREIGN KEY (LocationID) REFERENCES IMS_Locations(LocationID)
+);
+
+-- Create IMS_StockMovementHistory Table
+CREATE TABLE IMS_StockMovementHistory (
+    MovementID INT PRIMARY KEY IDENTITY(1,1),
+    ProductID INT NOT NULL,                   -- Foreign key to IMS_Products
+    BatchID INT NULL,                         -- Foreign key to IMS_ProductBatches (nullable for non-batched products)
+    MovementType NVARCHAR(20) CHECK (MovementType IN ('IN', 'OUT', 'TRANSFER', 'ADJUSTMENT')), 
+    Quantity INT NOT NULL,                    
+    SourceLocationID INT NULL,                -- Location where stock is moved from (nullable for IN/ADJUSTMENT)
+    DestinationLocationID INT NULL,           -- Location where stock is moved to (nullable for OUT/ADJUSTMENT)
+    MovementDate DATETIME DEFAULT GETDATE(),  
+    Description NVARCHAR(255) NULL,           -- Reason for movement or additional details
+
+    FOREIGN KEY (ProductID) REFERENCES IMS_Products(ProductID),
+    FOREIGN KEY (BatchID) REFERENCES IMS_ProductBatches(BatchID),
+    FOREIGN KEY (SourceLocationID) REFERENCES IMS_Locations(LocationID),
+    FOREIGN KEY (DestinationLocationID) REFERENCES IMS_Locations(LocationID)
+);

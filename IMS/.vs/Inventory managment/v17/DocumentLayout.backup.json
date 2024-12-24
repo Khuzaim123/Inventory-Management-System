@@ -3,40 +3,40 @@
   "WorkspaceRootPath": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\inventory_tracking.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:inventory_tracking.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\supplier.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:supplier.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\inventory_tracking.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:inventory_tracking.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\product.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:product.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\order.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:order.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\dashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:dashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\barcode.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:barcode.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\inventory_tracking.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:inventory_tracking.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\loginform.xaml.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:loginform.xaml.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\order.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:order.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\supplier.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:supplier.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\product.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:product.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\barcode.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|solutionrelative:barcode.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88D8E799-F6CD-40D4-8372-C8D7409249B0}|Inventory managment.csproj|d:\\university\\projects\\visual programing\\inventory-management-system\\ims\\order.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -86,7 +86,19 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "Inventory_Tracking.xaml",
+              "DocumentMoniker": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Inventory_Tracking.xaml",
+              "RelativeDocumentMoniker": "Inventory_Tracking.xaml",
+              "ToolTip": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Inventory_Tracking.xaml",
+              "RelativeToolTip": "Inventory_Tracking.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-23T17:19:46.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Supplier.xaml",
               "DocumentMoniker": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Supplier.xaml",
               "RelativeDocumentMoniker": "Supplier.xaml",
@@ -98,27 +110,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Inventory_Tracking.xaml.cs",
               "DocumentMoniker": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Inventory_Tracking.xaml.cs",
               "RelativeDocumentMoniker": "Inventory_Tracking.xaml.cs",
-              "ToolTip": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Inventory_Tracking.xaml.cs",
-              "RelativeToolTip": "Inventory_Tracking.xaml.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAuwAkAAABYAAAAAAAAAA==",
+              "ToolTip": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Inventory_Tracking.xaml.cs*",
+              "RelativeToolTip": "Inventory_Tracking.xaml.cs*",
+              "ViewState": "AgIAAGkAAAAAAAAAAIAwwHYAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-23T17:20:34.347Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Inventory_Tracking.xaml",
-              "DocumentMoniker": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Inventory_Tracking.xaml",
-              "RelativeDocumentMoniker": "Inventory_Tracking.xaml",
-              "ToolTip": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Inventory_Tracking.xaml",
-              "RelativeToolTip": "Inventory_Tracking.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-23T17:19:46.227Z",
               "EditorCaption": ""
             },
             {
@@ -159,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Barcode.xaml.cs",
               "DocumentMoniker": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Barcode.xaml.cs",
               "RelativeDocumentMoniker": "Barcode.xaml.cs",
@@ -182,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Product.xaml",
               "DocumentMoniker": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Product.xaml",
               "RelativeDocumentMoniker": "Product.xaml",
@@ -190,8 +190,7 @@
               "RelativeToolTip": "Product.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-22T06:07:50.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-22T06:07:50.992Z"
             },
             {
               "$type": "Document",
@@ -206,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "LoginForm.xaml.xaml.cs",
               "DocumentMoniker": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\LoginForm.xaml.xaml.cs",
               "RelativeDocumentMoniker": "LoginForm.xaml.xaml.cs",
@@ -214,7 +213,8 @@
               "RelativeToolTip": "LoginForm.xaml.xaml.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAASwA8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T13:42:27.801Z"
+              "WhenOpened": "2024-12-15T13:42:27.801Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -253,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Dashboard.xaml",
               "DocumentMoniker": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Dashboard.xaml",
               "RelativeDocumentMoniker": "Dashboard.xaml",
@@ -276,15 +276,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Dashboard.xaml.cs",
               "DocumentMoniker": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Dashboard.xaml.cs",
               "RelativeDocumentMoniker": "Dashboard.xaml.cs",
               "ToolTip": "D:\\university\\Projects\\Visual Programing\\Inventory-Management-System\\IMS\\Dashboard.xaml.cs",
               "RelativeToolTip": "Dashboard.xaml.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAASwGQAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAQwGYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T14:22:50.052Z"
+              "WhenOpened": "2024-12-15T14:22:50.052Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
