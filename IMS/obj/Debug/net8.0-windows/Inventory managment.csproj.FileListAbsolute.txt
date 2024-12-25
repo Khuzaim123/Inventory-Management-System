@@ -673,3 +673,7 @@ D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Deb
 D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Audit.baml
 D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\HelpAndSupport.baml
 D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\HelpAndSupport.g.cs
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\DashboardStaff.baml
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\DashboardStaff.g.cs
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\ManagerDashboard.baml
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\ManagerDashboard.g.cs

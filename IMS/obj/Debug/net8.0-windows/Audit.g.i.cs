@@ -60,7 +60,7 @@ namespace Inventory_managment {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Inventory managment;component/audit.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Inventory managment;V1.0.0.0;component/audit.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Audit.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

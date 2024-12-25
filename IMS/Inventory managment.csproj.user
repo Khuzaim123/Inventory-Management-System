@@ -19,6 +19,9 @@
     <Compile Update="Dashboard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="DashboardStaff.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="HelpAndSupport.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -29,6 +32,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="LoginForm.xaml.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ManagerDashboard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Order.xaml.cs">
@@ -60,6 +66,9 @@
     <Page Update="Dashboard.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="DashboardStaff.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="HelpAndSupport.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -73,6 +82,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ManagerDashboard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Order.xaml">

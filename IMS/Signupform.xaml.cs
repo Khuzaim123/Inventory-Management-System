@@ -64,7 +64,7 @@ namespace InventoryApp
                             this.Close();
 
                             // After successful sign up, navigate to the Dashboard
-                            Dashboard dashboard = new Dashboard();
+                            MainWindow dashboard = new MainWindow();
                             dashboard.ShowDialog();
                         }
                         else
