@@ -244,3 +244,23 @@ VALUES
 ('Hassan Ali', '0300-9876543', 'hassan.ali@gmail.com', 'Multan, Pakistan'),
 ('Zara Khan', '0312-4567890', 'zara.khan@hotmail.com', 'Lahore, Pakistan'),
 ('Ali Raza', '0345-1234567', 'ali.raza@yahoo.com', 'Karachi, Pakistan');
+
+CREATE TABLE IMS_SupportTickets (
+    TicketID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100),
+    Email NVARCHAR(100),
+    IssueType NVARCHAR(50),
+    Description NVARCHAR(MAX),
+    SubmissionDate DATETIME,
+    Status NVARCHAR(20)
+);
+
+INSERT INTO IMS_AuditLogs (UserID, Action, TableAffected, Description)
+VALUES
+(1, 'Login', 'IMS_Users', 'Admin logged in.'),
+(2, 'Add', 'IMS_Products', 'New product added: Nutella 350g.'),
+(1, 'Update', 'IMS_StockMovements', 'Updated stock for SKU-PK-NM01.');
+
+select * from IMS_AuditLogs;
+
+SELECT LogID, UserID, Action, TableAffected, ActionTime, Description FROM IMS_AuditLogs;
