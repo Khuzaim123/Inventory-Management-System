@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\App.xaml
-11-3212840
+14437118761
 
-16-454727641
+19-1211549069
 229570570062
-Barcode.xaml;Dashboard.xaml;Inventory_Tracking.xaml;LoginForm.xaml;LoginForm.xaml.xaml;MainWindow.xaml;Order.xaml;Product.xaml;Reports.xaml;Signupform.xaml;Supplier.xaml;
+Audit.xaml;Barcode.xaml;Customer.xaml;Dashboard.xaml;HelpAndSupport.xaml;Inventory_Tracking.xaml;LoginForm.xaml;LoginForm.xaml.xaml;MainWindow.xaml;Order.xaml;Product.xaml;Reports.xaml;Signupform.xaml;Supplier.xaml;
 
 False
 

@@ -7,10 +7,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Audit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Barcode.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Customer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Dashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HelpAndSupport.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Inventory_Tracking.xaml.cs">
@@ -39,10 +48,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Audit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Barcode.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Customer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Dashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HelpAndSupport.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Inventory_Tracking.xaml">

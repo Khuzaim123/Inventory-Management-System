@@ -49,7 +49,6 @@
             <Setter Property="AlternatingRowBackground" Value="#F1F1F1"/>
             <Setter Property="RowHeight" Value="30"/>
             <Setter Property="FontSize" Value="12"/>
-            <!-- Set smaller font size for DataGrid -->
         </Style>
 
         <Style TargetType="DataGridColumnHeader">
@@ -60,19 +59,26 @@
         </Style>
     </Window.Resources>
 
-    <Grid Margin="20">
-        <StackPanel Margin="10">
-            <TextBlock FontSize="28" FontWeight="Bold" Text="Inventory Reports" HorizontalAlignment="Center" Margin="0,0,0,20" Foreground="#008080"/>
+    <!-- Main layout with ScrollViewer -->
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="20">
+            <StackPanel Margin="10">
+                <!-- Report Title -->
+                <TextBlock FontSize="28" FontWeight="Bold" Text="Inventory Reports" HorizontalAlignment="Center" Margin="0,0,0,20" Foreground="#008080"/>
 
-            <ComboBox x:Name="ReportTypeComboBox" HorizontalAlignment="Center" Margin="0,0,0,20" SelectionChanged="ReportTypeComboBox_SelectionChanged">
-                <ComboBoxItem Content="Inventory Valuation" />
-                <ComboBoxItem Content="Stock Movement" />
-                <ComboBoxItem Content="Sales and Purchase" />
-            </ComboBox>
+                <!-- ComboBox for Report Type -->
+                <ComboBox x:Name="ReportTypeComboBox" HorizontalAlignment="Center" Margin="0,0,0,20" SelectionChanged="ReportTypeComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Inventory Valuation" />
+                    <ComboBoxItem Content="Stock Movement" />
+                    <ComboBoxItem Content="Sales and Purchase" />
+                </ComboBox>
 
-            <Button x:Name="GenerateReportButton" Content="Generate Report" Width="200" Height="35" HorizontalAlignment="Center" Click="GenerateReportButton_Click" />
+                <!-- Generate Report Button -->
+                <Button x:Name="GenerateReportButton" Content="Generate Report" Width="200" Height="35" HorizontalAlignment="Center" Click="GenerateReportButton_Click" />
 
-            <DataGrid x:Name="ReportDataGrid" Margin="10" AutoGenerateColumns="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-        </StackPanel>
-    </Grid>
+                <!-- DataGrid for displaying reports -->
+                <DataGrid x:Name="ReportDataGrid" Margin="10" AutoGenerateColumns="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Window>

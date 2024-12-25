@@ -32,10 +32,12 @@
                 <Button Content="Suppliers" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="Button_Click_2" />
                 <Button Content="Orders" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="Button_Click_1" />
                 <Button Content="Reports" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="Button_Click_3" />
-                <!-- Scan Barcode Button -->
                 <Button x:Name="ScanBarcode" Content="Scan Barcode" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="ScanBarcode_Click" />
-                <!-- Inventory Tracking Button -->
                 <Button x:Name="btnInventoryTracking" Content="Inventory Tracking" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="btnInventoryTracking_Click" />
+                <Button Content="Customer Info" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="CustomerInfo_Click" />
+                <!-- Help and Support Button -->
+                <Button Content="Help and Support" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="HelpAndSupport_Click" />
+                <Button Content="Audit Log" Background="White" Foreground="#008080" FontWeight="Bold" Margin="10,5" Padding="10" Click="AuditLog_Click" />
             </StackPanel>
         </Border>
 
@@ -54,10 +56,11 @@
                 </Border>
 
                 <!-- Low Stock Alerts -->
-                <Border Style="{StaticResource MetricBoxStyle}" Background="LightCoral">
+                <Border Style ="{StaticResource MetricBoxStyle}" Background="LightCoral">
                     <StackPanel>
                         <TextBlock Text="Low Stock Alerts" FontSize="16" FontWeight="Bold" Foreground="White" />
                         <ItemsControl ItemsSource="{Binding LowStockAlerts}" Foreground="White">
+                            <!-- Fixed binding path -->
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding}" FontSize="14" />

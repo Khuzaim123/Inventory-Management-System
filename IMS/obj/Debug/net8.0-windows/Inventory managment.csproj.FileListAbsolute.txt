@@ -667,3 +667,9 @@ D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Deb
 D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Supplier.baml
 D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Reports.baml
 D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Reports.g.cs
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Customer.baml
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Customer.g.cs
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Audit.g.cs
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\Audit.baml
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\HelpAndSupport.baml
+D:\university\Projects\Visual Programing\Inventory-Management-System\IMS\obj\Debug\net8.0-windows\HelpAndSupport.g.cs

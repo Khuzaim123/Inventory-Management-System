@@ -221,3 +221,26 @@ VALUES
 ('System maintenance scheduled for 12 AM tonight.', 1),
 ('Please review the pending purchase orders.', 1),
 ('Stock levels are critical for some products. Please check!', 1);
+
+
+CREATE TABLE IMS_Customers (
+    CustomerID INT PRIMARY KEY IDENTITY(1,1),      -- Unique identifier for each customer
+    CustomerName NVARCHAR(100) NOT NULL,          -- Full name of the customer
+    Phone NVARCHAR(15) NULL,                      -- Contact phone number
+    Email NVARCHAR(100) NULL UNIQUE,              -- Contact email (unique per customer)
+    Address NVARCHAR(255) NULL,                   -- Physical address of the customer
+    CreatedAt DATETIME DEFAULT GETDATE(),         -- Timestamp for when the profile was created
+    UpdatedAt DATETIME DEFAULT GETDATE()          -- Timestamp for the last profile update
+);
+
+-- Update IMS_SalesOrders to link with IMS_Customers
+ALTER TABLE IMS_SalesOrders
+ADD CustomerID INT NULL,                          -- Foreign key to link with IMS_Customers
+    FOREIGN KEY (CustomerID) REFERENCES IMS_Customers(CustomerID);
+
+-- Optional: Insert sample customersaa
+INSERT INTO IMS_Customers (CustomerName, Phone, Email, Address)
+VALUES 
+('Hassan Ali', '0300-9876543', 'hassan.ali@gmail.com', 'Multan, Pakistan'),
+('Zara Khan', '0312-4567890', 'zara.khan@hotmail.com', 'Lahore, Pakistan'),
+('Ali Raza', '0345-1234567', 'ali.raza@yahoo.com', 'Karachi, Pakistan');

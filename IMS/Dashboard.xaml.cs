@@ -10,6 +10,8 @@ namespace InventoryApp
     public partial class Dashboard : Window, INotifyPropertyChanged
     {
         private int totalStock;
+
+
         public int TotalStock
         {
             get => totalStock;
@@ -44,7 +46,7 @@ namespace InventoryApp
 
         public ObservableCollection<string> LowStockAlerts { get; set; } = new ObservableCollection<string>();
 
-        private string connectionString = "Data Source=KHUZAIM-PC;Initial Catalog=master;Integrated Security=True;Trust Server Certificate=True;";
+        private string connectionString = "Data Source=KHUZAIM-PC;Initial Catalog=master;Integrated Security=True;TrustServerCertificate=True;";
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -258,6 +260,39 @@ namespace InventoryApp
         {
             Report r = new Report();
             r.Show();
+        }
+        private void CustomerInfo_Click(object sender, RoutedEventArgs e)
+        {
+            CustomerManagement customerManagementWindow = new CustomerManagement();
+            customerManagementWindow.Show();
+        }
+
+        private void HelpSupport_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void HelpAndSupport_Click(object sender, RoutedEventArgs e)
+        {
+            string message = "Welcome to Inventory Management System!\n\n" +
+                            "For further assistance, contact:\n" +
+                            "233503@students.au.edu.pk\n" +
+                            "233798@students.au.edu.pk\n" +
+                            "233587@students.au.edu.pk\n\n" +
+                            "Did you know?\n" +
+                            "• Effective inventory management can reduce storage costs by up to 40%\n" +
+                            "• Real-time inventory tracking can prevent 90% of stockouts";
+
+            MessageBox.Show(message, "Welcome to Help & Support", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            HelpAndSupport helpSupport = new HelpAndSupport();
+            helpSupport.Show();
+        }
+
+        private void AuditLog_Click(object sender, RoutedEventArgs e)
+        {
+            Audit a = new Audit();
+            a.Show();
         }
     }
 }
