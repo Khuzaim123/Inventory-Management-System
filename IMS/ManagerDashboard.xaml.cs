@@ -57,6 +57,7 @@ namespace Inventory_managment
         {
             InitializeComponent();
             LoadDashboardData();
+            this.DataContext = this;
         }
 
         private void LoadDashboardData()
@@ -156,8 +157,19 @@ namespace Inventory_managment
         private void HelpAndSupport_Click(object sender, RoutedEventArgs e)
         {
             // Navigate to Help and Support page
-            HelpAndSupport helpAndSupport = new HelpAndSupport();
-            helpAndSupport.Show();
+            string message = "Welcome to Inventory Management System!\n\n" +
+                           "For further assistance, contact:\n" +
+                           "233503@students.au.edu.pk\n" +
+                           "233798@students.au.edu.pk\n" +
+                           "233587@students.au.edu.pk\n\n" +
+                           "Did you know?\n" +
+                           "• Effective inventory management can reduce storage costs by up to 40%\n" +
+                           "• Real-time inventory tracking can prevent 90% of stockouts";
+
+            MessageBox.Show(message, "Welcome to Help & Support", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            HelpAndSupport helpSupport = new HelpAndSupport();
+            helpSupport.Show();
         }
 
         private void AuditLog_Click(object sender, RoutedEventArgs e)
